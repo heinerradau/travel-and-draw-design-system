@@ -292,10 +292,12 @@ The design system's primary function is to **stay out of the way** of the artwor
 
 ### Logo & Brand Mark
 
-- The header uses a **text-based logo**: "Travel & Draw" or "@heinerradau" 
-- No standalone icon/logo mark currently in use
+- **Logo:** Black globe icon on transparent/white background (no text)
+- **File:** `assets/logo.png` (1000×500px PNG, 26 KB)
+- **Favicon:** `assets/favicon.png` — same globe icon, used as site favicon + Apple touch icon
 - Logo is positioned center in header grid
-- Logo dimensions: 170×85px (desktop), 150×75px (mobile)
+- Display dimensions: 170×85px (desktop), 150×75px (mobile)
+- Source: Shopify CDN `files/newlogo_vektor_rect_1000x500_*.png`
 
 ---
 
