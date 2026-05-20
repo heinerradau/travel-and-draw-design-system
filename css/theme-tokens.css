@@ -1,0 +1,110 @@
+/* ============================================================
+   Travel & Draw — Theme Tokens (CSS Custom Properties)
+   Extracted from Shopify Impact Theme v5
+   ============================================================ */
+
+:root {
+  /* === COLORS === */
+
+  /* Primary palette */
+  --color-text-primary: 39 39 39;           /* #272727 — Body, headings */
+  --color-text-light: 255 255 255;          /* #FFFFFF — Text on dark bg */
+  --color-accent: 31 38 51;                 /* #1F2633 — Buttons, links */
+  --color-background: 255 255 255;          /* #FFFFFF — Page, cards */
+  --color-footer-bg: 242 242 242;           /* #F2F2F2 — Footer, alt sections */
+  --color-header-bg: 255 255 255;           /* Header background */
+
+  /* Functional */
+  --color-error-text: 170 40 38;            /* #AA2826 */
+  --color-error-bg: 245 229 229;            /* #F5E5E5 */
+  --color-sale-badge: 227 79 79;            /* #E34F4F */
+  --color-primary-badge: 60 97 158;         /* #3C619E */
+  --color-border: var(--color-text-primary) / 0.12;
+
+  /* Portfolio / Print supplement */
+  --color-dark-cover: 17 17 17;             /* #111111 */
+  --color-warm-paper: 245 240 235;          /* #F5F0EB */
+  --color-tag-bg: 240 236 231;              /* #F0ECE7 */
+
+  /* === TYPOGRAPHY === */
+
+  --font-heading: 'Playfair', serif;
+  --font-heading-weight: 400;
+  --font-heading-style: normal;
+  --font-heading-letter-spacing: 0;
+  --font-heading-transform: none;
+
+  --font-body: 'Libre Franklin', sans-serif;
+
+  /* === SPACING === */
+
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-9: 2.25rem;   /* 36px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+
+  /* === BORDER RADIUS === */
+
+  --rounded-xs: 0.25rem;
+  --rounded-sm: 0.5rem;
+  --rounded: 0.625rem;
+  --rounded-input: 0.625rem;
+  --rounded-lg: 2rem;
+  --rounded-button: 3.75rem;                /* Pill shape */
+  --rounded-full: 9999px;
+
+  /* === SHADOWS === */
+
+  --shadow-sm: 0 2px 8px rgb(var(--color-text-primary) / 0.1);
+  --shadow: 0 5px 15px rgb(var(--color-text-primary) / 0.1);
+  --shadow-md: 0 5px 30px rgb(var(--color-text-primary) / 0.1);
+  --shadow-block: 0 18px 50px rgb(var(--color-text-primary) / 0.1);
+
+  /* === LAYOUT === */
+
+  --container-max: 1800px;
+  --container-narrow: 1550px;
+  --container-rich-text: 650px;
+  --container-press: 1000px;
+  --grid-gutter: var(--spacing-5);
+  --container-gutter: var(--spacing-5);
+
+  /* === INPUTS === */
+
+  --input-height: 2.625rem;
+  --input-padding-inline: var(--spacing-4);
+  --input-gap: var(--spacing-2);
+
+  /* === HEADER === */
+
+  --header-logo-width: 170px;
+  --header-logo-height: 85px;
+  --header-logo-width-mobile: 150px;
+  --header-logo-height-mobile: 75px;
+  --header-padding-block: var(--spacing-6);
+  --header-background-blur: 14px;
+  --header-background-opacity: 0.6;
+
+  /* === PRODUCT GRID === */
+
+  --product-list-column-gap: var(--grid-gutter);
+  --product-list-row-gap: var(--spacing-8);
+
+  /* === SECTION SPACING === */
+
+  --section-outer-spacing-block: var(--spacing-10);
+  --section-stack-spacing-block: var(--spacing-8);
+  --section-inner-max-spacing-block: var(--spacing-9);
+
+  /* === TRANSITIONS === */
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}

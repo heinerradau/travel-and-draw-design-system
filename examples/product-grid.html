@@ -1,0 +1,240 @@
+<!-- ============================================================
+     Travel & Draw — Product Grid Example
+     Standalone responsive product grid using the design system
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel & Draw — Product Grid Example</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Playfair:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/theme-tokens.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-body);
+    color: rgb(var(--color-text-primary));
+    background: rgb(var(--color-background));
+    line-height: 1.6;
+  }
+
+  .page { max-width: var(--container-max); margin: 0 auto; padding: 40px var(--container-gutter); }
+
+  .page-title {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    color: rgb(var(--color-text-primary) / 0.6);
+    margin-bottom: 2rem;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(var(--color-border));
+  }
+  .toolbar__count { font-size: 14px; color: rgb(var(--color-text-primary) / 0.6); }
+  .toolbar__sort { font-family: var(--font-body); font-size: 14px; padding: 8px 12px; border: 1px solid rgb(var(--color-border)); border-radius: var(--rounded-input); background: white; color: rgb(var(--color-text-primary)); }
+
+  /* Product Grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--product-list-row-gap) var(--product-list-column-gap);
+  }
+
+  .product-card {
+    background: rgb(var(--color-background));
+    transition: box-shadow var(--transition-base);
+    position: relative;
+  }
+  .product-card:hover { box-shadow: var(--shadow-md); }
+
+  .product-card__image-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+    background: #e0e0e0;
+  }
+
+  .product-card__badge {
+    position: absolute; top: 12px; left: 12px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 1px; padding: 4px 10px; border-radius: var(--rounded-xs);
+    color: white;
+  }
+  .badge--sale { background: rgb(var(--color-sale-badge)); }
+  .badge--new { background: rgb(var(--color-primary-badge)); }
+
+  .product-card__body { padding: 16px 0; }
+  .product-card__city {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+  .product-card__variant {
+    font-size: 14px;
+    color: rgb(var(--color-text-primary) / 0.6);
+    margin-bottom: 8px;
+  }
+  .product-card__price {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .product-card__price--sale {
+    color: rgb(var(--color-sale-badge));
+  }
+  .product-card__price--compare {
+    text-decoration: line-through;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(var(--color-text-primary) / 0.5);
+    margin-left: 8px;
+  }
+
+  .product-card__btn {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 0.75rem;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    background: rgb(var(--color-accent));
+    color: rgb(var(--color-text-light));
+    border: none;
+    border-radius: var(--rounded-button);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
+  .product-card:hover .product-card__btn { opacity: 1; }
+
+  @media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .product-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <h1 class="page-title">All Artworks</h1>
+  <p class="page-subtitle">Hand-drawn city art — live on the streets of the world.</p>
+
+  <div class="toolbar">
+    <span class="toolbar__count">24 Products</span>
+    <select class="toolbar__sort">
+      <option>Featured</option>
+      <option>Newest</option>
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+    </select>
+  </div>
+
+  <div class="product-grid">
+    <!-- Card 1: Sale -->
+    <div class="product-card">
+      <div class="product-card__image-wrap">
+        <div class="product-card__image" style="background:#d0d0d0;"></div>
+        <span class="product-card__badge badge--sale">Sale</span>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__city">New York City</h3>
+        <p class="product-card__variant">Fine Art Print · A2</p>
+        <span class="product-card__price product-card__price--sale">€129,00</span>
+        <span class="product-card__price--compare">€149,00</span>
+        <button class="product-card__btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 2: New -->
+    <div class="product-card">
+      <div class="product-card__image-wrap">
+        <div class="product-card__image" style="background:#d5d5d5;"></div>
+        <span class="product-card__badge badge--new">New</span>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__city">Amsterdam</h3>
+        <p class="product-card__variant">Canvas Print · 60×80cm</p>
+        <span class="product-card__price">€249,00</span>
+        <button class="product-card__btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="product-card">
+      <div class="product-card__image-wrap">
+        <div class="product-card__image" style="background:#d8d8d8;"></div>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__city">Paris</h3>
+        <p class="product-card__variant">Fine Art Print · A3</p>
+        <span class="product-card__price">€99,00</span>
+        <button class="product-card__btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="product-card">
+      <div class="product-card__image-wrap">
+        <div class="product-card__image" style="background:#ccc;"></div>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__city">Berlin</h3>
+        <p class="product-card__variant">Canvas Print · 60×80cm</p>
+        <span class="product-card__price">€249,00</span>
+        <button class="product-card__btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="product-card">
+      <div class="product-card__image-wrap">
+        <div class="product-card__image" style="background:#dbdbdb;"></div>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__city">London</h3>
+        <p class="product-card__variant">Fine Art Print · A2</p>
+        <span class="product-card__price">€149,00</span>
+        <button class="product-card__btn">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="product-card">
+      <div class="product-card__image-wrap">
+        <div class="product-card__image" style="background:#dedede;"></div>
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__city">München</h3>
+        <p class="product-card__variant">Fine Art Print · A3</p>
+        <span class="product-card__price">€99,00</span>
+        <button class="product-card__btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

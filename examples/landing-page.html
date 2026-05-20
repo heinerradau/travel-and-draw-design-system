@@ -1,0 +1,268 @@
+<!-- ============================================================
+     Travel & Draw — Landing Page Example
+     Complete landing page using the design system components
+     ============================================================ -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel & Draw — Design System Landing Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Playfair:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/theme-tokens.css">
+<style>
+  /* === RESET === */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); color: rgb(var(--color-text-primary)); background: rgb(var(--color-background)); line-height: 1.6; }
+
+  /* === CONTAINER === */
+  .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-gutter); }
+  .container--narrow { max-width: var(--container-narrow); }
+  .container--text { max-width: var(--container-rich-text); }
+
+  /* === HEADER === */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(var(--color-header-bg), var(--header-background-opacity));
+    backdrop-filter: blur(var(--header-background-blur));
+    padding: var(--header-padding-block) var(--container-gutter);
+    border-bottom: 1px solid rgb(var(--color-border));
+  }
+  .site-header__inner {
+    max-width: var(--container-max); margin: 0 auto;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .site-header__logo {
+    font-family: var(--font-heading); font-weight: 400; font-size: 24px;
+    color: rgb(var(--color-text-primary)); text-decoration: none;
+    letter-spacing: 2px;
+  }
+
+  /* === HERO === */
+  .hero {
+    min-height: 70vh; display: flex; align-items: center; justify-content: center;
+    background: rgb(var(--color-accent)); text-align: center; padding: 80px 24px;
+    position: relative;
+  }
+  .hero__content { max-width: 800px; position: relative; z-index: 1; }
+  .hero__heading {
+    font-family: var(--font-heading); font-weight: 400; color: rgb(var(--color-text-light));
+    font-size: clamp(36px, 8vw, 65px); line-height: 1.1; margin-bottom: 20px;
+  }
+  .hero__subtitle {
+    font-size: 18px; color: rgba(255, 255, 255, 0.8); margin-bottom: 32px;
+  }
+
+  /* === BUTTONS (reuse from theme-tokens) === */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--font-body); font-size: 1rem; font-weight: 500;
+    padding: 0.875rem 2.5rem; border-radius: var(--rounded-button);
+    border: none; cursor: pointer; text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+  .btn--primary { background: rgb(var(--color-accent)); color: rgb(var(--color-text-light)); }
+  .btn--primary:hover { opacity: 0.85; }
+  .btn--secondary { background: transparent; color: rgb(var(--color-text-primary)); border: 1px solid rgb(var(--color-border)); }
+  .btn--secondary:hover { background: rgb(var(--color-text-primary) / 0.03); }
+
+  /* === SECTIONS === */
+  .section { padding: var(--section-outer-spacing-block) var(--container-gutter); }
+  .section--alt { background: rgb(var(--color-footer-bg)); }
+  .section__heading {
+    font-family: var(--font-heading); font-weight: 400; font-size: 2rem;
+    text-align: center; margin-bottom: 0.75rem;
+  }
+  .section__subtitle { text-align: center; font-size: 1rem; color: rgb(var(--color-text-primary) / 0.6); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  /* === PRODUCT GRID === */
+  .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--product-list-row-gap) var(--product-list-column-gap); }
+  .product-card { background: rgb(var(--color-background)); transition: box-shadow var(--transition-base); }
+  .product-card:hover { box-shadow: var(--shadow-md); }
+  .product-card__image { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; background: #e0e0e0; }
+  .product-card__body { padding: 16px 0; }
+  .product-card__title { font-family: var(--font-heading); font-weight: 400; font-size: 18px; margin-bottom: 4px; }
+  .product-card__subtitle { font-size: 14px; color: rgb(var(--color-text-primary) / 0.6); margin-bottom: 8px; }
+  .product-card__price { font-weight: 600; font-size: 16px; }
+
+  /* === CITY GRID === */
+  .city-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .city-tag { padding: 14px 18px; background: rgb(var(--color-tag-bg)); font-size: 14px; font-weight: 500; }
+  .city-tag__name { font-weight: 700; }
+  .city-tag__year { font-size: 11px; opacity: 0.4; margin-top: 4px; }
+  @media (max-width: 600px) { .city-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  /* === NEWSLETTER === */
+  .newsletter { background: rgb(var(--color-footer-bg)); padding: 64px 24px; text-align: center; }
+  .newsletter__inner { max-width: 500px; margin: 0 auto; }
+  .newsletter__heading { font-family: var(--font-heading); font-weight: 400; font-size: 2rem; margin-bottom: 0.75rem; }
+  .newsletter__subtitle { font-size: 1rem; color: rgb(var(--color-text-primary) / 0.7); margin-bottom: 1.5rem; }
+  .newsletter__form { display: flex; gap: 8px; }
+  .newsletter__input { flex: 1; height: var(--input-height); padding: 0 var(--input-padding-inline); border-radius: var(--rounded-input); border: 1px solid rgb(var(--color-border)); font-family: var(--font-body); font-size: 1rem; outline: none; }
+  .newsletter__input:focus { border-color: rgb(var(--color-accent)); }
+  .newsletter__note { margin-top: 1rem; font-size: 0.75rem; color: rgb(var(--color-text-primary) / 0.4); }
+  @media (max-width: 640px) { .newsletter__form { flex-direction: column; } }
+
+  /* === TESTIMONIALS === */
+  .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .testimonial { background: rgb(var(--color-footer-bg)); padding: 32px; }
+  .testimonial__quote { font-family: var(--font-heading); font-style: italic; font-size: 18px; line-height: 1.5; margin-bottom: 16px; }
+  .testimonial__author { font-size: 14px; color: rgb(var(--color-text-primary) / 0.6); }
+
+  /* === FOOTER === */
+  .site-footer { background: rgb(var(--color-footer-bg)); padding: 48px 24px; font-size: 14px; }
+  .site-footer__inner { max-width: var(--container-max); margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
+  .site-footer__block h4 { font-family: var(--font-heading); font-weight: 400; font-size: 16px; margin-bottom: 12px; }
+  .site-footer__block ul { list-style: none; }
+  .site-footer__block li { margin-bottom: 8px; }
+  .site-footer__block a { color: rgb(var(--color-text-primary)); text-decoration: none; opacity: 0.7; }
+  .site-footer__block a:hover { opacity: 1; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px) { .product-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo">TRAVEL &amp; DRAW</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__content">
+    <h1 class="hero__heading">Art with essence of cities</h1>
+    <p class="hero__subtitle">Urban drawings from around the world — created live on the streets, line by line.</p>
+    <a href="#" class="btn btn--primary">Explore the Collection</a>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section__heading">Featured Artworks</h2>
+    <p class="section__subtitle">Limited edition prints, each one hand-signed and numbered.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card__image" style="background:#d0d0d0;"></div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">New York City Panorama</h3>
+          <p class="product-card__subtitle">Fine Art Print · A2</p>
+          <p class="product-card__price">€149,00</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image" style="background:#d5d5d5;"></div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Paris — Montmartre</h3>
+          <p class="product-card__subtitle">Fine Art Print · A3</p>
+          <p class="product-card__price">€99,00</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image" style="background:#dadada;"></div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">Berlin — Brandenburger Tor</h3>
+          <p class="product-card__subtitle">Canvas Print · 60×80cm</p>
+          <p class="product-card__price">€249,00</p>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card__image" style="background:#c8c8c8;"></div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">London — Tower Bridge</h3>
+          <p class="product-card__subtitle">Fine Art Print · A2</p>
+          <p class="product-card__price">€149,00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CITIES DRAWN -->
+<section class="section section--alt">
+  <div class="container--narrow" style="margin: 0 auto;">
+    <h2 class="section__heading">Cities Drawn</h2>
+    <p class="section__subtitle">Each city is drawn live on location — no studio, no photos, no shortcuts.</p>
+    <div class="city-grid">
+      <div class="city-tag"><div class="city-tag__name">New York City</div><div class="city-tag__year">2025</div></div>
+      <div class="city-tag"><div class="city-tag__name">Paris</div><div class="city-tag__year">2024</div></div>
+      <div class="city-tag"><div class="city-tag__name">Berlin</div><div class="city-tag__year">2015–24</div></div>
+      <div class="city-tag"><div class="city-tag__name">London</div><div class="city-tag__year">2023</div></div>
+      <div class="city-tag"><div class="city-tag__name">München</div><div class="city-tag__year">2024</div></div>
+      <div class="city-tag"><div class="city-tag__name">Seoul</div><div class="city-tag__year">2024</div></div>
+      <div class="city-tag"><div class="city-tag__name">Hanoi</div><div class="city-tag__year">2023</div></div>
+      <div class="city-tag"><div class="city-tag__name">Amsterdam</div><div class="city-tag__year">2025</div></div>
+      <div class="city-tag"><div class="city-tag__name">Brüssel</div><div class="city-tag__year">2022</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <h2 class="section__heading">What Customers Say</h2>
+    <div class="testimonial-grid" style="margin-top: 2.5rem;">
+      <div class="testimonial">
+        <p class="testimonial__quote">"..the canvas arrived and I'm just in love with it!!😍 thank you sooo much"</p>
+        <p class="testimonial__author">— Customer, 2025</p>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial__quote">"Thank you very much! Again I am so happy to have known your art through Instagram 👍 it looks great 😍"</p>
+        <p class="testimonial__author">— Customer, 2024</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter__inner">
+    <h2 class="newsletter__heading">Sign up for exclusive insights</h2>
+    <p class="newsletter__subtitle">Behind the scenes, new cities, and early access to new artwork.</p>
+    <form class="newsletter__form">
+      <input type="email" class="newsletter__input" placeholder="E-mail" required>
+      <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+    <p class="newsletter__note">No spam, no ads. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__block">
+      <h4>Travel &amp; Draw</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__block">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">All Artworks</a></li>
+        <li><a href="#">Cities</a></li>
+        <li><a href="#">Canvas Prints</a></li>
+      </ul>
+    </div>
+    <div class="site-footer__block">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

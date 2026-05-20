@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel & Draw — Color Palette</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Libre Franklin', sans-serif;
+    background: #FFFFFF;
+    color: #272727;
+    padding: 40px;
+  }
+  h1 {
+    font-family: 'Playfair', serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+  }
+  .color-card {
+    border: 1px solid rgba(39, 39, 39, 0.12);
+    border-radius: 0.625rem;
+    overflow: hidden;
+  }
+  .color-card__swatch {
+    height: 120px;
+  }
+  .color-card__info {
+    padding: 16px;
+    background: #FFFFFF;
+  }
+  .color-card__name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  .color-card__hex {
+    font-size: 13px;
+    color: rgba(39, 39, 39, 0.6);
+    font-family: monospace;
+    margin-bottom: 2px;
+  }
+  .color-card__usage {
+    font-size: 12px;
+    color: rgba(39, 39, 39, 0.4);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+  .white-swatch { border-bottom: 1px solid rgba(39, 39, 39, 0.12); }
+</style>
+</head>
+<body>
+
+<h1>Travel & Draw — Color Palette</h1>
+
+<div class="palette-grid">
+
+  <!-- Text Primary -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#272727;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Text Primary</div>
+      <div class="color-card__hex">#272727</div>
+      <div class="color-card__usage">Body text, headings, UI labels</div>
+    </div>
+  </div>
+
+  <!-- Accent -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#1F2633;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Accent</div>
+      <div class="color-card__hex">#1F2633</div>
+      <div class="color-card__usage">Buttons, links, interactive elements</div>
+    </div>
+  </div>
+
+  <!-- White -->
+  <div class="color-card">
+    <div class="color-card__swatch white-swatch" style="background:#FFFFFF;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Background / Text Light</div>
+      <div class="color-card__hex">#FFFFFF</div>
+      <div class="color-card__usage">Page bg, cards, text on dark</div>
+    </div>
+  </div>
+
+  <!-- Footer BG -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#F2F2F2;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Footer Background</div>
+      <div class="color-card__hex">#F2F2F2</div>
+      <div class="color-card__usage">Footer, alternating sections</div>
+    </div>
+  </div>
+
+  <!-- Error -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#AA2826;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Error Text</div>
+      <div class="color-card__hex">#AA2826</div>
+      <div class="color-card__usage">Form error messages</div>
+    </div>
+  </div>
+
+  <!-- Error BG -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#F5E5E5;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Error Background</div>
+      <div class="color-card__hex">#F5E5E5</div>
+      <div class="color-card__usage">Form error backgrounds</div>
+    </div>
+  </div>
+
+  <!-- Sale Badge -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#E34F4F;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Sale Badge</div>
+      <div class="color-card__hex">#E34F4F</div>
+      <div class="color-card__usage">Sale/discount badges</div>
+    </div>
+  </div>
+
+  <!-- Primary Badge -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#3C619E;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Primary Badge</div>
+      <div class="color-card__hex">#3C619E</div>
+      <div class="color-card__usage">New/featured badges</div>
+    </div>
+  </div>
+
+  <!-- Dark Cover -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#111111;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Dark Cover (Portfolio)</div>
+      <div class="color-card__hex">#111111</div>
+      <div class="color-card__usage">Dark covers, hero alt</div>
+    </div>
+  </div>
+
+  <!-- Warm Paper -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#F5F0EB;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Warm Paper (Portfolio)</div>
+      <div class="color-card__hex">#F5F0EB</div>
+      <div class="color-card__usage">Paper-tone backgrounds</div>
+    </div>
+  </div>
+
+  <!-- Tag BG -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:#F0ECE7;"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Tag Background (Portfolio)</div>
+      <div class="color-card__hex">#F0ECE7</div>
+      <div class="color-card__usage">Tag/chip backgrounds</div>
+    </div>
+  </div>
+
+  <!-- Border -->
+  <div class="color-card">
+    <div class="color-card__swatch" style="background:rgba(39,39,39,0.12);"></div>
+    <div class="color-card__info">
+      <div class="color-card__name">Border</div>
+      <div class="color-card__hex">rgba(39,39,39,0.12)</div>
+      <div class="color-card__usage">Subtle borders, dividers</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

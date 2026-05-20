@@ -1,0 +1,91 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Shopify/theme-tools/main/packages/theme-check/schemas/settings_schema.json",
+  "name": "Travel & Draw Design Tokens",
+  "description": "Design tokens extracted from live Shopify Impact theme for coherent frontend development. These are the actual values used on heinerradau.de.",
+  "version": "1.0",
+  "colors": {
+    "text_primary": "#272727",
+    "text_light": "#FFFFFF",
+    "accent": "#1F2633",
+    "background": "#FFFFFF",
+    "footer_bg": "#F2F2F2",
+    "header_bg": "#FFFFFF",
+    "error_text": "#AA2826",
+    "error_bg": "#F5E5E5",
+    "sale_badge": "#E34F4F",
+    "primary_badge": "#3C619E",
+    "border": "rgba(39, 39, 39, 0.12)"
+  },
+  "typography": {
+    "heading_font": "Playfair, serif",
+    "heading_weight": 400,
+    "heading_style": "normal",
+    "body_font": "Libre Franklin, sans-serif",
+    "base_size": "16px"
+  },
+  "spacing": {
+    "spacing_2": "0.5rem",
+    "spacing_3": "0.75rem",
+    "spacing_4": "1rem",
+    "spacing_5": "1.25rem",
+    "spacing_6": "1.5rem",
+    "spacing_8": "2rem",
+    "spacing_9": "2.25rem",
+    "spacing_10": "2.5rem",
+    "spacing_12": "3rem"
+  },
+  "border_radius": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "default": "0.625rem",
+    "lg": "2rem",
+    "button": "3.75rem",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0 2px 8px rgba(39, 39, 39, 0.1)",
+    "default": "0 5px 15px rgba(39, 39, 39, 0.1)",
+    "md": "0 5px 30px rgba(39, 39, 39, 0.1)",
+    "block": "0 18px 50px rgba(39, 39, 39, 0.1)"
+  },
+  "layout": {
+    "container_max": "1800px",
+    "container_narrow": "1550px",
+    "rich_text_max": "650px",
+    "press_max": "1000px",
+    "grid_gutter": "20px",
+    "container_gutter": "20px",
+    "header_logo_width": "170px",
+    "header_logo_height": "85px",
+    "header_logo_width_mobile": "150px",
+    "header_logo_height_mobile": "75px"
+  },
+  "components": {
+    "button": {
+      "background_primary": "#1F2633",
+      "text_primary": "#FFFFFF",
+      "background_secondary": "transparent",
+      "text_secondary": "#272727",
+      "border_secondary": "rgba(39, 39, 39, 0.12)",
+      "radius": "3.75rem",
+      "padding_y": "0.875rem",
+      "padding_x": "2.5rem",
+      "font_family": "Libre Franklin, sans-serif"
+    },
+    "input": {
+      "height": "2.625rem",
+      "padding_inline": "1rem",
+      "radius": "0.625rem",
+      "border": "1px solid rgba(39, 39, 39, 0.12)",
+      "focus_border": "#1F2633"
+    },
+    "product_card": {
+      "background": "#FFFFFF",
+      "hover_shadow": "0 5px 30px rgba(39, 39, 39, 0.1)",
+      "title_font": "Playfair, serif",
+      "title_size": "18px",
+      "price_size": "16px",
+      "price_weight": 600
+    }
+  }
+}
