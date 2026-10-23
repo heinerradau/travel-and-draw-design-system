@@ -1,0 +1,2 @@
+{%- comment -%} „Travel & Draw“ bündig unter dem Wortteil des Logos (Buchstaben verteilt) {%- endcomment -%}
+<span class="tnd-logo__sub" aria-label="Travel &amp; Draw">{%- assign tnd_chars = 'TRAVEL&DRAW' | split: '' -%}{%- for c in tnd_chars -%}{%- if c == '&' -%}<span aria-hidden="true"></span><span aria-hidden="true">&amp;</span><span aria-hidden="true"></span>{%- else -%}<span aria-hidden="true">{{ c }}</span>{%- endif -%}{%- endfor -%}</span>

@@ -1,0 +1,10 @@
+:root{
+  --tnd-paper:#F2EBDD; --tnd-paper-2:#F6F0E4; --tnd-paper-3:#EDE4D1; --tnd-hair:#D8CDB6;
+  --tnd-ink:#15120E; --tnd-ink-2:#3A332A; --tnd-ink-soft:#6B6256; --tnd-muted:#cabfae;
+  --tnd-red:#C8102E; --tnd-red-hover:#A50D25; --tnd-rose:#E9A6AE; --tnd-star:#D4A017;
+  --tnd-font-disp:'Bebas Neue',Impact,sans-serif;
+  --tnd-font-body:'Barlow',system-ui,sans-serif;
+  --tnd-font-cond:'Barlow Condensed','Barlow',sans-serif;
+  --tnd-font-story:Georgia,'Times New Roman',serif;
+  --tnd-max:1240px; --tnd-gutter:clamp(16px,4vw,56px); --tnd-space:clamp(48px,7vw,96px);
+}

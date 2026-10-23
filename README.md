@@ -1,417 +1,121 @@
-# Travel & Draw — Design System
+# heiner radau · Travel & Draw — Visuelle Identität v2
 
-**Version:** 1.0  
-**Date:** 2026-05-20  
-**Author:** Heiner Radau / Alpha The Bat  
-**Shopify Theme:** Impact (v5, 2024)
+**Stand:** 23.10.2026 · **Gilt für:** heinerradau.de (Shopify-Theme `heinerradau-theme`, Branch `relaunch`, live seit 23.10.2026), Checkout, Klaviyo-Mails, Landingpages, Print.
+**Vorgänger:** v1 (05/2026, Impact-Theme, weiß/navy) liegt unter [`legacy/v1/`](legacy/v1/) – nicht mehr verwenden.
 
----
-
-## 1. Brand Description
-
-**Travel & Draw** is the artist brand of Heiner Radau — a German artist who creates graphic black-and-white city drawings with ink and fountain pen, drawn live on the streets of international cities. Every line is created on location, without photos, projectors, tracings, or studio redraws.
-
-The brand communicates:
-- **Authenticity** — real street drawing, not studio work
-- **Urban storytelling** — each artwork is a personal document of a city
-- **Process transparency** — the drawing journey is as valuable as the finished piece
-- **Minimalist aesthetic** — black ink, white paper, no distractions
-
-**Tagline:** *"Every line a story. Every city a sheet."*  
-**Brand name:** Travel & Draw  
-**Domain:** heinerradau.de
+Übersicht zum Anschauen: [`index.html`](index.html) (alle Logos, Farben, Schriften, Bausteine auf einer Seite).
 
 ---
 
-## 2. Target Audience
+## 1. Marke in einem Satz
 
-- Art buyers looking for unique, story-rich urban art (25–55)
-- Interior design enthusiasts who value original, handcrafted pieces
-- City lovers and travel enthusiasts
-- B2B buyers: hotels, offices, city merchandise programs, tourism boards
-- Instagram-native art discovery audience (~4.8k followers)
-- International audience (shipping to 30+ countries)
+**heiner radau** ist der Künstler, **Travel & Draw** ist seine Arbeitsweise: Städte, live auf der Straße gezeichnet – mit Feder und Tinte, ohne Fotovorlage, ohne Radiergummi, wochenlang auf einem Blatt.
 
----
+- Absender/Name: **heiner radau** (im Logo immer klein geschrieben)
+- Linie/Untertitel: **Travel & Draw** (steht immer klein unter dem Schriftzug)
+- Domain: heinerradau.de · Instagram: @heinerradau · B2B: studio@heinerradau.de
+- Haltung: echt, handgemacht, urban, Street-Art-Wurzeln mit Uhrmacher-Präzision. Laut im Ausdruck, ruhig im Rahmen – das Kunstwerk trägt das Bild.
 
-## 3. Visual Style
+## 2. Logos
 
-### Core Principle: Minimalist Frame for Complex Art
+Alle Logos sind Vektoren (SVG) und liegen zusätzlich als PNG in 600/1200/2400 px bei. Quelle: Heiners Affinity-Dateien in [`logos/source/`](logos/source/) (nachgezeichnet aus deren Vorschaubild, weiße Außenkontur entfernt).
 
-The design system's primary function is to **stay out of the way** of the artwork. The black-and-white ink drawings carry all the visual weight. Everything else — layout, typography, color — creates a clean, gallery-like frame.
+| Logo | Datei | Wofür |
+|---|---|---|
+| **Wortbildmarke** – Globus links, „heiner radau“ rechts | `logos/wordmark/heiner-radau-wordmark-{ink,black,paper,white,red}.svg` | Hauptlogo: Website-Header, Footer, Checkout, Mail-Kopf, Katalog-Cover |
+| **Lockup** – Wortbildmarke + „TRAVEL & DRAW“ | `logos/lockup/heiner-radau-travel-and-draw-lockup-{ink,ink-solid,paper,white,black}.svg` | Überall, wo die Marke vollständig stehen soll: Header/Footer (so umgesetzt), Print, Präsentationen, Briefpapier |
+| **Siegel** – Name im Globus | `logos/badge/heiner-radau-badge-color.svg` (weißer Globus), `-on-paper.svg` (Globus papierfarben), `-mono-{ink,black,paper,white,red}.svg` (einfarbig, Globus ausgestanzt) | Kleine/quadratische Flächen und „Stempel“ (siehe 2.2) |
+| **Favicon/App-Icon** | `logos/favicon/favicon-badge.svg` + PNG 32/180/512 | Browser-Tab, Apple-Touch-Icon, Art-Map-App |
 
-**Key characteristics:**
-- High contrast: white backgrounds, dark text/accent
-- Generous whitespace — gallery breathing room
-- Typographic hierarchy through weight and size, not color
-- No decorative elements, gradients, or visual noise
-- Dark accent color (navy-charcoal) for interactive elements
-- Rounded, friendly shapes for UI components (buttons, inputs)
-- Subtle shadows for depth on cards and elevated elements
+### 2.1 Regeln Wortbildmarke + Travel & Draw
+- **„Travel & Draw“ steht unter dem Wortteil**, nicht unter dem Globus: Die Zeile beginnt genau dort, wo „heiner radau“ beginnt (**37,25 % der Logobreite**), und endet bündig rechts mit dem Schriftzug. Die Buchstaben werden auf diese Breite verteilt.
+- Schrift: Barlow Condensed 600, Versalien. Auf Papier in Tinte-weich `#6B6256`, auf Dunkel in `#CABFAE`. Für Print in einer Farbe: `ink-solid`.
+- Größe: Versalhöhe ≈ 12 % der Logohöhe, Abstand zum Logo ≈ 10 % der Logohöhe.
+- Mindestbreite Wortbildmarke: 120 px digital / 30 mm Print. Darunter: Siegel nehmen.
+- Schutzraum rundum: mindestens die Höhe des „h“.
+- Keine weiße Kontur, keine Schatten, nicht verzerren, nicht drehen, nicht auf unruhigen Bildstellen platzieren.
+- Farben: Tinte auf Papier (Standard), Papier auf Tinte (Footer, dunkle Bänder). Rot nur als Sonderfall (Sticker, Kampagne), nie auf Rot.
+- In Liquid fertig: [`shopify/tnd-logo-mark.liquid`](shopify/tnd-logo-mark.liquid) (SVG mit `currentColor`) + [`shopify/tnd-logo-sub.liquid`](shopify/tnd-logo-sub.liquid) (verteilte Unterzeile).
 
-**Mood:** Calm, confident, architectural, international, artistic — not loud, not trendy, not commercial-feeling.
+### 2.2 Wo das Siegel (Name im Globus) hinpasst
+Das Siegel ist quadratisch und trägt den Namen selbst – ideal dort, wo wenig Platz ist oder etwas „abgestempelt“ wirken soll. **Nicht** zusammen mit der Wortbildmarke auf derselben Fläche.
 
----
+1. **Favicon / App-Icon** (Browser-Tab, Startbildschirm, Berlin-Art-Map-App) – Wortbildmarke ist dort zu breit.
+2. **Profilbilder** auf Instagram, TikTok, YouTube, Facebook, Klaviyo-Absenderbild, Google-Unternehmensprofil.
+3. **Echtheits-Stempel**: Rückseite der Leinwand, Echtheitszertifikat, Versandkarton-Sticker, Hang-Tags an Merch, Etikett im T-Shirt.
+4. **„Original by heiner radau“-Siegel** auf der Produktseite (neben „Hand-drawn original“) und auf der „Über Heiner“-Seite beim Porträt.
+5. **Mail-Fuß** (klein, Mono-Papier auf Tinte oder Mono-Tinte auf Papier) und E-Mail-Signatur.
+6. **POS/B2B**: QR-Aufsteller, Regal-Wobbler, Katalog-Rückseite.
 
-## 4. Color Palette
+## 3. Farben
 
-### Primary Palette (from Shopify Theme — Impact v5)
+| Token | Hex | Einsatz |
+|---|---|---|
+| `--tnd-paper` | `#F2EBDD` | Seitenhintergrund (Papier) |
+| `--tnd-paper-2` | `#F6F0E4` | Karten, Bildflächen (Papier hell) |
+| `--tnd-paper-3` | `#EDE4D1` | Bänder, Bestellübersicht im Checkout (Checkout: `#EDE4D3`) |
+| `--tnd-hair` | `#D8CDB6` | Haarlinien, Rahmen |
+| `--tnd-ink` | `#15120E` | Text, Logo, dunkle Flächen (Tinte) |
+| `--tnd-ink-2` | `#3A332A` | Fließtext |
+| `--tnd-ink-soft` | `#6B6256` | Nebentexte, Unterzeile „Travel & Draw“ |
+| `--tnd-muted` | `#CABFAE` | Text auf Dunkel |
+| `--tnd-red` | `#C8102E` | Akzent, Buttons, Eyebrows, Links (Hover `#A50D25`) |
+| `--tnd-rose` | `#E9A6AE` | Akzent auf Dunkel |
+| `--tnd-star` | `#D4A017` | Bewertungs-Sterne |
+| Art-Map-Touren | `#1E5BC6` `#F2C230` `#1F8A4C` `#7B3FB5` | nur in der Berlin Art Map |
 
-| Token | CSS Variable | RGB | Hex | Usage |
-|-------|-------------|-----|-----|-------|
-| **Text Primary** | `--text-primary` | `39 39 39` | `#272727` | Body text, headings, UI labels |
-| **Text Light** | `--text-color` | `255 255 255` | `#FFFFFF` | Text on dark backgrounds |
-| **Accent** | `--accent` | `31 38 51` | `#1F2633` | Buttons, links, interactive elements |
-| **Background Primary** | `--background-primary` | `255 255 255` | `#FFFFFF` | Page background, cards |
-| **Footer Background** | `--footer-background` | `242 242 242` | `#F2F2F2` | Footer, subtle section alternation |
-| **Header Background** | `--header-background` | `255 255 255` | `#FFFFFF` | Sticky header with blur |
+Kein Weiß als Seitenhintergrund. Weiß nur in Formularfeldern und im Siegel-Globus.
 
-### Secondary / Functional Colors
+## 4. Schrift
 
-| Token | RGB | Hex | Usage |
-|-------|-----|-----|-------|
-| **Error Text** | `170 40 38` | `#AA2826` | Form error messages |
-| **Error Background** | `245 229 229` | `#F5E5E5` | Form error backgrounds |
-| **Sale Badge** | `227 79 79` | `#E34F4F` | Sale/discount badges |
-| **Primary Badge** | `60 97 158` | `#3C619E` | "New" or featured badges |
-| **Border** | `text-primary / 0.12` | `rgba(39,39,39,0.12)` | Subtle borders |
+| Rolle | Schrift | Regeln |
+|---|---|---|
+| Display / Überschriften | **Bebas Neue** 400 | Versal, Zeilenhöhe 0,9. **Überall, wo es punchy, wichtig, produktbezogen und modern ist.** |
+| Eyebrow, Buttons, Labels, Navigation | **Barlow Condensed** 600 | Versal, Laufweite .08–.14em; Eyebrow 12 px in Rot |
+| Fließtext | **Barlow** 400/500 | 16–17 px, Zeilenhöhe 1,6 |
+| Story | **Georgia** | **Story, Geschichte, Emotion**: Entstehungstext, Zitat, Bewertungen (`--tnd-font-story`) |
 
-### Portfolio/Print Palette (supplementary)
+Google Fonts: `Bebas+Neue`, `Barlow:wght@400;500`, `Barlow+Condensed:wght@600`. In Mails fallen Webfonts oft weg → Fallbacks `Impact` / `Arial Narrow` / `Arial` / `Georgia` sind eingeplant.
 
-| Hex | Usage |
-|-----|-------|
-| `#111111` | Dark covers, hero backgrounds |
-| `#F5F0EB` | Warm off-white paper tone |
-| `#FEFEFE` | Print page backgrounds |
-| `#F0ECE7` | Tag/chip backgrounds |
+## 5. Layout & Formen
+- Inhaltsbreite max. 1180–1240 px, Rand `clamp(16px,4vw,56px)`, Sektionsabstand `clamp(48px,7vw,96px)`.
+- Ecken **2 px** (eckig). Pillen-Form nur für Filter und Touren.
+- Hero zweispaltig ab 900 px. Kunstwerk mit leichtem Schlagschatten.
+- Buttons: Rot (Hauptaktion), Tinte, Linie. Mindesthöhe 48 px.
 
-### Color Philosophy
+## 6. Bilder
+- **Kunstwerke immer quadratisch.** Weißer Rand um den Rahmen mit einem normalen Rechteck weggeschnitten (kein Zauberstab).
+- Keine weißen Hintergründe in Produktbildern – Freisteller/transparent oder Papierton.
+- Kein Text im Bild (Texte gehören als echter, übersetzbarer Seitentext daneben). Wenn doch: Englisch.
+- **Leinwand-Freisteller** (`14x14-angled-*.webp`, alle 13 Städte gleich): Die Leinwand beginnt bei **7,8 %** von links und endet **6 %** vor rechts. Titel und Preis in Produktkarten stehen bündig unter der Leinwand (`.tnd-on-canvas`, `.tnd-card--canvas`).
 
-- **Never use color as decoration.** The art is black and white — the UI should be too.
-- Accent color (`#1F2633`) is a deep navy-charcoal — never pure black, never bright.
-- White space is active design element, not empty space.
-- Red is reserved for sale badges and errors only.
-- Blue is reserved for informational badges only.
+## 7. Sprache & Inhalte
+- Website zweisprachig EN (Hauptsprache) / DE. Mails aktuell Englisch.
+- Feste Fakten: 12 gezeichnete Städte (Berlin, New York, Paris, London, Amsterdam, München, Seoul, Hanoi, Brüssel, Basel, Valencia, Luang Prabang = Motiv „Laos“). „Universe“ ist ein Fantasiemotiv (keine Stadt, aber als Leinwand im Shop).
+- Leinwand: 344 g/m² Poly-Cotton, rundum bedruckt (3-D-Galerie-Effekt), Keilrahmen 3,1 cm; Lieferzeit 6–12 Werktage. Versand frei: DE ab 50 €, EU ab 100 €, weltweit ab 150 €.
+- POS-Regel: Seiten, auf die ein QR im Laden zeigt, nie mit Rabatt/Sale.
 
----
+## 8. Umsetzung in Systemen
 
-## 5. Typography
+| System | Wo | Stand |
+|---|---|---|
+| Shopify-Theme | `heinerradau-theme` → `assets/tnd-base.css`, Sections `tnd-*` | live |
+| Tokens | [`tokens/tokens.css`](tokens/tokens.css), [`tokens/tokens.json`](tokens/tokens.json) | Kopie aus dem Theme |
+| Checkout (Basic) | Shopify → Einstellungen → Checkout → Anpassen | Papier `#F2EBDD`, Übersicht `#EDE4D3`, Rot `#C8102E`, Bebas/Barlow, Logo 180 px. Ecken/Feldrand im Basic-Tarif nicht einstellbar |
+| Klaviyo-Mails | Vorlagen „TND v2 · …“; Referenz + Generator in [`email/`](email/) | Welcome v2 + Abandoned Checkout v2 als Entwurf |
+| Klaviyo-Formulare | Popup noch im alten Look | offen |
 
-### Font Stack
-
-| Role | Font Family | Weight | Style | Usage |
-|------|------------|--------|-------|-------|
-| **Headings** | `Playfair, serif` | 400 | normal | H1–H6, section titles, product titles |
-| **Body** | `Libre Franklin, sans-serif` | variable (400–700) | normal | Body text, buttons, navigation, forms |
-
-### CSS Implementation
-
-```css
-:root {
-  --heading-font-family: 'Playfair', serif;
-  --heading-font-weight: 400;
-  --heading-font-style: normal;
-  --heading-letter-spacing: 0;
-  --heading-text-transform: normal;
-
-  --text-font-family: 'Libre Franklin', sans-serif;
-}
+## 9. Ordner
+```
+logos/      wordmark · lockup · badge · favicon · source (Affinity-Originale + Vorschau)
+tokens/     tokens.css · tokens.json
+shopify/    Liquid-Snippets für Logo + Unterzeile
+email/      Referenz-Mails (HTML) + build.py (Generator)
+legacy/v1/  alter Stand 05/2026 (Impact, weiß/navy) – nur Archiv
+index.html  Übersicht zum Anschauen
 ```
 
-### Typographic Scale
-
-| Level | Font Size | Line Height | Usage |
-|-------|-----------|-------------|-------|
-| H1 | `calc(min(20vw, 65px))` | 1.1 | Hero headlines (Impact text) |
-| H2 | ~40px | 1.2 | Page titles, major sections |
-| H3 | ~28px | 1.3 | Section headings |
-| H4 | ~22px | 1.3 | Card titles, sub-sections |
-| H5 | ~16px | 1.4 | Small headings |
-| Body | 16px | 1.6 | Body text |
-| Small | 14px | 1.5 | Captions, meta |
-| X-Small | 12px | 1.4 | Legal, footer fine print |
-
-### Typography Rules
-
-- Headings in **Playfair** — elegant, editorial, never bold (400 weight is enough)
-- Body text in **Libre Franklin** — clean, modern, highly readable
-- Never use Playfair for body text (poor readability)
-- Never use Libre Franklin for large headings (loses character)
-- Letter-spacing on headings: `0` (natural Playfair spacing is sufficient)
-- Uppercase only for small labels (10–12px) with `letter-spacing: 3–6px`
-
----
-
-## 6. Button Styles
-
-### Primary Button
-
-```css
-.button--primary {
-  background: rgb(var(--button-background-primary)); /* #1F2633 */
-  color: rgb(var(--button-text-primary));             /* #FFFFFF */
-  font-family: var(--text-font-family);
-  border-radius: var(--rounded-button);               /* 3.75rem — pill shape */
-  padding: 0.875rem 2.5rem;
-  font-size: 1rem;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: background-opacity 0.2s;
-}
-
-.button--primary:hover {
-  opacity: 0.85;
-}
-```
-
-### Secondary / Ghost Button
-
-```css
-.button--secondary {
-  background: transparent;
-  color: rgb(var(--text-primary));                     /* #272727 */
-  border: 1px solid rgba(var(--text-primary), 0.12);
-  border-radius: var(--rounded-button);
-  padding: 0.875rem 2.5rem;
-  font-family: var(--text-font-family);
-  font-size: 1rem;
-  cursor: pointer;
-}
-```
-
-### Button Variants
-
-| Variant | Background | Text | Border | Usage |
-|---------|-----------|------|--------|-------|
-| **Primary** | `#1F2633` | `#FFFFFF` | none | Main CTAs, Add to Cart, Submit |
-| **Secondary** | transparent | `#272727` | `rgba(39,39,39,0.12)` | Secondary actions, "Learn more" |
-| **Ghost** | `rgba(39,39,39,0.05)` | `#272727` | none | Low-emphasis actions |
-
-### Button Rules
-
-- All buttons are **pill-shaped** (`border-radius: 3.75rem`)
-- Minimum tap target: 44px height
-- Font: Libre Franklin, never Playfair
-- Only ONE primary button per section
-- Button text: short, action-oriented, no punctuation
-- Never use color (red/green) for buttons — only the accent navy
-
----
-
-## 7. Layout Rules
-
-### Grid System
-
-| Token | Value | Usage |
-|-------|-------|-------|
-| Max container width | `1800px` | Full-width content |
-| Narrow container | `1550px` | Reading-optimized content |
-| Rich text max | `650px` | Long-form text blocks |
-| Press section max | `1000px` | Press/logo sections |
-| Grid gutter | `var(--spacing-5)` | ~20px on desktop |
-| Container gutter | `var(--spacing-5)` | ~20px page edge padding |
-
-### Spacing Scale
-
-```
---spacing-2:  0.5rem   (8px)
---spacing-3:  0.75rem  (12px)
---spacing-4:  1rem     (16px)
---spacing-5:  1.25rem  (20px)
---spacing-6:  1.5rem   (24px)
---spacing-8:  2rem     (32px)
---spacing-9:  2.25rem  (36px)
---spacing-10: 2.5rem   (40px)
---spacing-12: 3rem     (48px)
-```
-
-### Section Spacing
-
-- **Section outer spacing** (top/bottom margin): `--spacing-10` (40px)
-- **Section stack gap** (between adjacent sections): `--spacing-8` (32px)
-- **Section inner spacing** (padding inline): `--container-gutter` (20px)
-- **Section inner max block**: `--spacing-9` (36px)
-
-### Product Grid
-
-```css
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  column-gap: var(--grid-gutter);
-  row-gap: var(--spacing-8);
-}
-```
-
-- Default: 3–4 columns on desktop
-- Tablet: 2 columns
-- Mobile: 1–2 columns
-
-### Header
-
-- Sticky header with backdrop blur (`14px blur`, 60% opacity)
-- Logo: 170px wide × 85px high (desktop), 150×75 (mobile)
-- Grid: `"main-nav logo secondary-nav"` centered layout
-- Background: white, transparent text: `#272727`
-
-### Layout Principles
-
-1. **Gallery breathing room always wins over density.**
-2. **Single-column for reading, grid for browsing.**
-3. **No sidebars** — content is full-width within containers.
-4. **Sticky header only** — no floating elements, no popups on load.
-5. **Mobile-first breakpoints** — design for narrow screens first.
-
----
-
-## 8. Imagery & Visual Language
-
-### Artwork Photography
-
-- **Style:** Documentary / process-oriented
-- **In-situ shots:** Artwork in customer homes, on walls, in context
-- **Process shots:** Heiner drawing on the street — the artist at work
-- **Detail shots:** Close-ups of ink lines, textures, signatures
-- **City context:** The artwork alongside the real location
-
-### Photography Rules
-
-- **No glossy product mockups** — real photos only
-- **Natural lighting preferred** — no studio lighting aesthetic
-- **People are secondary** — the artwork is always the subject
-- **Color photos for context** — but the artwork itself is black and white
-- **Aspect ratios:** Flexible, but hero images 16:9 or 3:2
-
-### Image Treatment
-
-- No filters or presets applied to artwork photos
-- Customer photos: authentic, unpolished
-- Product cards: artwork fills frame, minimal padding
-- Overlay on hero images: `0 0 0 / 0.0` to `0 0 0 / 0.3` (subtle dark overlay)
-
-### Logo & Brand Mark
-
-- **Logo:** Black globe icon on transparent/white background (no text)
-- **File:** `assets/logo.png` (1000×500px PNG, 26 KB)
-- **Favicon:** `assets/favicon.png` — same globe icon, used as site favicon + Apple touch icon
-- Logo is positioned center in header grid
-- Display dimensions: 170×85px (desktop), 150×75px (mobile)
-- Source: Shopify CDN `files/newlogo_vektor_rect_1000x500_*.png`
-
----
-
-## 9. Components
-
-### Product Card
-
-```
-┌──────────────────────┐
-│                      │
-│    [Artwork Image]   │
-│                      │
-├──────────────────────┤
-│ City Name            │ ← Playfair, ~18px
-│ Product Type         │ ← Libre Franklin, 14px, subdued
-│ €XX,XX              │ ← Libre Franklin, 16px, semibold
-└──────────────────────┘
-```
-
-- White background
-- Subtle shadow on hover
-- Image fills card, no border radius on image
-- Title + price below image
-- No "Sale" badge unless discounted
-
-### Newsletter Form
-
-```
-┌─────────────────────────────────────┐
-│         Section Heading             │ ← Playfair, centered
-│       Subtitle / incentive          │ ← Libre Franklin, 16px
-│                                     │
-│  ┌──────────────────┐ ┌──────────┐ │
-│  │  E-mail address  │ │ Sign up  │ │ ← Input + button inline
-│  └──────────────────┘ └──────────┘ │
-│                                     │
-│       No spam, no ads text          │ ← Small, subdued
-└─────────────────────────────────────┘
-```
-
-### Hero Section (Landing Page)
-
-```
-┌──────────────────────────────────────┐
-│                                      │
-│    [Full-width artwork/process       │
-│     image with subtle dark           │
-│     overlay]                         │
-│                                      │
-│    H1: Main headline                 │ ← Playfair, large, white
-│    Subtitle text                     │ ← Libre Franklin, white
-│                                      │
-│    [Primary Button]                  │ ← Pill button
-│                                      │
-└──────────────────────────────────────┘
-```
-
----
-
-## 10. Dos & Don'ts
-
-### ✅ DO
-
-- Use lots of white space — let the artwork breathe
-- Keep typography clean: Playfair for headings, Libre Franklin for body
-- Use the deep navy (`#1F2633`) as the only accent color for UI
-- Rounded pill buttons (`border-radius: 3.75rem`) for all CTAs
-- Show real artwork, real processes, real customer photos
-- Keep copy direct, honest, and personal — not corporate
-- Maintain high contrast: dark text on white, white text on dark
-- Design for mobile first, then scale up
-
-### ❌ DON'T
-
-- **Never use bright colors** — no orange, green, pink, or gradient CTAs
-- **Never use pure black** (`#000`) — use `#272727` or `#1F2633`
-- **Never add decorative borders, dividers, or ornamentation**
-- **Never use sans-serif for large headings** — Playfair only
-- **Never use serif for body text** — Libre Franklin only
-- **Never use drop shadows aggressively** — subtle only (`rgba(39,39,39,0.1)`)
-- **Never use stock photography** — all imagery must be authentic
-- **Never use emoji in UI** — emoji in customer quotes only
-- **Never use animation for decoration** — only for functional feedback (hover, loading)
-- **Never use colored backgrounds for sections** — white or `#F2F2F2` only
-- **Don't crowd elements** — spacing is generous by default
-- **Don't use "sale!" language** — let the art speak, not the discount
-- **Don't use corporate marketing clichés** — "revolutionary", "game-changing", etc.
-
----
-
-## 11. Shopify Theme Reference
-
-This design system is extracted from the live Shopify store using the **Impact** theme (v5, 2024 by Maestrooo).
-
-The Impact theme uses:
-- **CSS Custom Properties** for all design tokens (see `shopify/theme-tokens.css`)
-- **Liquid sections** for modular page building
-- **Shopify's `srcset`** for responsive images
-- **Native Shopify cart/drawer** components
-
-Custom theme customizations:
-- Logo size: 170×85px (desktop), 150×75px (mobile)
-- Header layout: centered logo with navigation on sides
-- Footer: light gray background (`#F2F2F2`)
-- Product cards: white background, clean layout
-- Typography overrides: Playfair headings, Libre Franklin body
-
----
-
-## 12. Related Resources
-
-- **Live site:** https://www.heinerradau.de
-- **NYC Art Map (funnel):** https://www.heinerradau.de/nyc-art-map
-- **Instagram:** https://www.instagram.com/heinerradau
-- **Shopify Theme:** Impact by Maestrooo (v5)
-- **Font: Playfair** — https://fonts.google.com/specimen/Playfair (SIL Open Font License)
-- **Font: Libre Franklin** — https://fonts.google.com/specimen/Libre+Franklin (SIL Open Font License)
+## 10. Offen
+- Logos direkt aus Affinity als SVG exportieren und die Nachzeichnungen ersetzen (gleiche Dateinamen).
+- Favicon im Shop auf `logos/favicon/favicon-badge-512.png` umstellen (Theme-Editor → Theme-Einstellungen → Favicon).
+- Klaviyo-Popup im v2-Look neu bauen.
