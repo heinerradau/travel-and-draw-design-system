@@ -19,7 +19,7 @@ Für alle, die für heiner radau gestalten: Website, Mail, Social, Kampagnen, Pr
 
 **Frei** (eigene Identität je Kampagne, auch eigenes Logo, eigene Farben, eigene Schrift): Kampagnen und Social Media. Bis zum Durchdrehen, solange Regel 3 und 4 halten.
 
-**Kleinste gemeinsame Klammer** *(Vorschlag, Heiner kann streichen)*: In jeder Kampagne ist am Ende erkennbar, wer absendet. Dafür reicht der Name „heiner radau“ in irgendeiner Form, oder die echte Zeichnung. Eins von beiden, nicht beides.
+**Kleinste gemeinsame Klammer** *(Vorschlag, Heiner kann streichen)*: In jeder Kampagne ist am Ende erkennbar, wer absendet. Dafür reicht der Name „heiner radau“ in irgendeiner Form, oder die echte Zeichnung. Mindestens eins von beiden.
 
 ## Wie viel Text
 
