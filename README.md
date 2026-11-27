@@ -3,6 +3,8 @@
 **Stand:** 23.10.2026 · **Gilt für:** heinerradau.de (Shopify-Theme `heinerradau-theme`, Branch `relaunch`, live seit 23.10.2026), Checkout, Klaviyo-Mails, Landingpages, Print.
 **Vorgänger:** v1 (05/2026, Impact-Theme, weiß/navy) liegt unter [`legacy/v1/`](legacy/v1/) – nicht mehr verwenden.
 
+> **Grundsätze und Kampagnen (Entwurf, 27.11.2026):** Die „Visuelle Identität v2“ unten gilt für die feste Marke: Shop, Checkout, Mail-Rahmen, Verpackung, Echtheits-Siegel. Kampagnen und Social Media dürfen eine eigene Identität haben. Was dann immer gilt, steht in [`GRUNDSAETZE.md`](GRUNDSAETZE.md), die Vorlage in [`KAMPAGNEN-STECKBRIEF.md`](KAMPAGNEN-STECKBRIEF.md), Heiners Rückmeldungen in [`FEEDBACK.md`](FEEDBACK.md).
+
 Übersicht zum Anschauen: [`index.html`](index.html) (alle Logos, Farben, Schriften, Bausteine auf einer Seite).
 
 ---
